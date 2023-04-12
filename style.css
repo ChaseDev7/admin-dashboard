@@ -1,14 +1,13 @@
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 125px);
 }
 
 p {
     margin: 0px;
-}
-
-.container {
-    display: flex;
 }
 
 .sidebar {
@@ -16,12 +15,9 @@ p {
     color: white;
     font-size: 17px;
     font-weight: 700;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 150px;
-    padding: 10px 0px 0px 10px;
+    padding: 20px 20px 0px 20px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
 }
 
 .material-symbols-outlined {
@@ -57,18 +53,10 @@ p {
     padding-bottom: 40px;
 }
 
-.main {
-    margin-left: 160px;
-}
-
 .header {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
     padding: 15px 25px 15px 25px;
-    left: 160px;
-    right: 0;
-    height: 100px;
     box-shadow: 0px 5px 5px lightgray;
     z-index: 1;
 }
@@ -162,37 +150,47 @@ button {
     margin-right: 15px;
 }
 
-.projects-title {
+.projects-title,
+.announcements-title,
+.trending-title {
     font-size: 12px;
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
-    margin: 15px 0px 0px 15px;
+    margin: 25px 0px 0px 15px;
 }
 
 .dashboard {
     background-color: rgb(239, 233, 233);
-    position: absolute;
-    top: 130px;
-    left: 160px;
-    right: 0;
-    bottom: 0;
     z-index: 0;
+    grid-column: 2 / 6;
+    grid-row: 2 / 6;  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr); 
+}
+
+.main-container {
+    grid-column: 1 / 4;
+    grid-row: 1 / 5;
 }
 
 .project-container {
     margin: 5px 0px 0px 15px;
     display: grid;
-    grid-template-columns: 230px 230px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    gap: 10px;
+    gap: 15px;
 }
 
 .project {
-    padding: 20px 50px 20px 10px;
     background-color: white;
     border-radius: 5px;
     border-left: 5px solid orange;
     box-shadow: 2px 2px 5px lightgray;;
+}
+
+.project-details {
+    padding: 20px 50px 20px 10px;
 }
 
 .project-text-title {
@@ -202,4 +200,50 @@ button {
 
 .project-text {
     font-size: 10px;
+}
+
+.project-options {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0px 20px 10px 0px;
+}
+
+#favorite-icon,
+#visibility-icon,
+#share-icon,
+#notification-icon,
+#search-icon {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.option {
+    margin-left: 10px;
+}
+
+.side-content {
+    grid-column: 4 / 5;
+    grid-row: 1 / 5;
+}
+
+.announcements {
+    align-items: center;
+    justify-content: center;
+    margin: 5px 15px 0px 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px lightgray;
+    padding: 20px 10px 20px 10px;
+}
+
+.announcement-details {
+    width: 140px;
+}
+
+hr {
+    margin: 15px 0px;
 }
